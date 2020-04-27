@@ -209,7 +209,7 @@ public class CalculatorUI extends Application {
 		Button clear = new Button("CE");
 		clear.setPrefWidth(BUTTON_SIZE);
 		clear.setPrefHeight(BUTTON_SIZE);
-		clear.setOnAction((e)->clear());
+		clear.setOnAction(e -> clear());
 		grid.add(clear,  2,  2);
 		
 		for(int i = 1; i <= 9; i++) {
