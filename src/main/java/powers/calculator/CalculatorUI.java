@@ -115,6 +115,7 @@ public class CalculatorUI extends Application {
 			break;
 		case NEGATE:
 		case SQUARE:
+		case LOG:
 		case RESULT:
 			if(Double.isFinite(value)) {
 				stateLabel.setText("");
@@ -195,11 +196,11 @@ public class CalculatorUI extends Application {
 		stateLabel = new Label("");
 		grid.add(stateLabel, 0, 0, 4, 1);
 		
-		Button square = new Button("x^2");
-		square.setPrefWidth(BUTTON_SIZE);
-		square.setPrefHeight(BUTTON_SIZE);
-		square.setOnAction((e) -> action(Calculator.Operation.SQUARE));
-		grid.add(square, 0, 2);
+		Button log = new Button("log(x)");
+		log.setPrefWidth(BUTTON_SIZE);
+		log.setPrefHeight(BUTTON_SIZE);
+		log.setOnAction((e) -> action(Calculator.Operation.LOG));
+		grid.add(log, 0, 2);
 		
 		Button power = new Button("x^y");
 		power.setPrefWidth(BUTTON_SIZE);

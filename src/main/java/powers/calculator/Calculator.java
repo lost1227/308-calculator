@@ -6,7 +6,7 @@ import java.math.RoundingMode;
 
 public class Calculator {
 	
-	public enum Operation { RESULT, PLUS, MINUS, TIMES, DIVIDE, SQUARE, POWER, NEGATE}
+	public enum Operation { RESULT, PLUS, MINUS, TIMES, DIVIDE, SQUARE, POWER, NEGATE, LOG}
 	
 	private double value = 0;
 	private Operation state = Operation.RESULT;
@@ -40,6 +40,7 @@ public class Calculator {
 			break;
 		case RESULT:
 			value = newValue;
+			break;
 		default:
 			break;
 		}
@@ -56,6 +57,9 @@ public class Calculator {
 			value = -1 * value;
 			state = Operation.RESULT;
 			break;
+		case LOG:
+			value = Math.log10(value);
+			state = Operation.RESULT;
 		default:
 			break;
 		}
