@@ -1,4 +1,5 @@
 language: java
+dist: trusty
 
 addons:
   sonarcloud:
@@ -7,7 +8,7 @@ addons:
       secure: "uVdfxKrI9eHIE3w5uOD7PWjWD33+24wwPlnlCJ1N4JGUED++w83AszsTfda/Tyg1uaFTcBbahOsW8+LviAZ89FKGgADpWYl+5EZaJb8ljtgyGnqrksrOki8fg23Nct3C6BfABS8aI594YBtgIxgZ+fq03ngZ6DMO3Ke1JhVc2FlX4oqRaasNYfvHhPKVAClz2pQ5eUgQ18lRzOsORl45YpkOpmZ+VPmRVJttqSa3wntl1Kh6or2JrKLkekBQYiIRp5azqKsqKmJTLyb2SuJbN650rNliITH0kYd982mHyzLLkwbMf8t146/J0YTZGCBIrRNGVTfp9mB7u2vn+2AyuJzr4Qf8WRkWJQHZWha5NB025heGXvKGC2dKvucNFauZkQueQmzp8232W1z62BLv7KRUQ0pvBEZj2hdPMd0rUi/yCfk+rxnUrPzHUj0oH8v1f19pbfXTLzVkDJckc6zd7s/86JmwBRndsUTAl8E6/bONFuI71V9iasPV2UD6WyxFVn2RcVTpFsN/s+3ZB3Ni7Iem276YkWrRwXyd9MZC1tNNBWRHGlHo3uSOokA8iPJKIBqwTcNJhXgpEtjw0eAfQObS7CZEahyCi91VojpGcYHuU58QGHWce6fy4s0HbWYBdQbEm+4Xxy8xMWjQaME78/Cwafdl7Kgp6mlJemRYiFg="
       
 jdk:
-  - openjdk8
+  - oraclejdk8
 
 script:
   - ./gradlew sonarqube
