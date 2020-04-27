@@ -1,6 +1,5 @@
 package powers.calculator;
 
-import java.lang.Math;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -60,6 +59,7 @@ public class Calculator {
 		case LOG:
 			value = Math.log10(value);
 			state = Operation.RESULT;
+			break;
 		default:
 			break;
 		}

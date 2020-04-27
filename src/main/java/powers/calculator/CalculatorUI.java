@@ -138,8 +138,6 @@ public class CalculatorUI extends Application {
 		grid.setHgap(0);
 		grid.setVgap(0);
 		
-		// grid.gridLinesVisibleProperty().set(true);
-		
 		UnaryOperator<Change> doubleFilter = change -> {
 			String newText = change.getControlNewText();
 			if(minusPushed && change.getText().equals("-")) {
@@ -153,13 +151,13 @@ public class CalculatorUI extends Application {
 		};
 		
 		input = new TextField();
-		formatter =  new TextFormatter<String>(
+		formatter =  new TextFormatter<>(
 						new DefaultStringConverter(), "", doubleFilter
 				);
 		input.setTextFormatter(formatter);
 		setupNextInput();
 		
-		input.setOnKeyPressed((e) -> {
+		input.setOnKeyPressed(e -> {
 			switch(e.getCode()) {
 			case ENTER:
 				action(Calculator.Operation.RESULT);
@@ -199,13 +197,13 @@ public class CalculatorUI extends Application {
 		Button log = new Button("log(x)");
 		log.setPrefWidth(BUTTON_SIZE);
 		log.setPrefHeight(BUTTON_SIZE);
-		log.setOnAction((e) -> action(Calculator.Operation.LOG));
+		log.setOnAction(e -> action(Calculator.Operation.LOG));
 		grid.add(log, 0, 2);
 		
 		Button power = new Button("x^y");
 		power.setPrefWidth(BUTTON_SIZE);
 		power.setPrefHeight(BUTTON_SIZE);
-		power.setOnAction((e) -> action(Calculator.Operation.POWER));
+		power.setOnAction(e -> action(Calculator.Operation.POWER));
 		grid.add(power, 1, 2);
 		
 		Button clear = new Button("CE");
@@ -219,7 +217,7 @@ public class CalculatorUI extends Application {
 			Button button = new Button(istr);
 			button.setPrefWidth(BUTTON_SIZE);
 			button.setPrefHeight(BUTTON_SIZE);
-			button.setOnAction((e) -> pushButton(istr));
+			button.setOnAction(e -> pushButton(istr));
 			
 			grid.add(button, (i - 1) % 3, 5 - ((i - 1) / 3));
 		}
@@ -227,50 +225,50 @@ public class CalculatorUI extends Application {
 		Button zero = new Button("0");
 		zero.setPrefWidth(BUTTON_SIZE);
 		zero.setPrefHeight(BUTTON_SIZE);
-		zero.setOnAction((e) -> pushButton("0"));
+		zero.setOnAction(e -> pushButton("0"));
 		grid.add(zero, 1, 6);
 		
 		Button decimal = new Button(".");
 		decimal.setPrefWidth(BUTTON_SIZE);
 		decimal.setPrefHeight(BUTTON_SIZE);
-		decimal.setOnAction((e) -> pushButton("."));
+		decimal.setOnAction(e -> pushButton("."));
 		grid.add(decimal, 2, 6);
 		
 		Button negate = new Button("+/-");
 		negate.setPrefWidth(BUTTON_SIZE);
 		negate.setPrefHeight(BUTTON_SIZE);
-		negate.setOnAction((e) -> action(Calculator.Operation.NEGATE));
+		negate.setOnAction(e -> action(Calculator.Operation.NEGATE));
 		grid.add(negate, 0, 6);
 		
 		
 		Button divide = new Button("/");
 		divide.setPrefWidth(BUTTON_SIZE);
 		divide.setPrefHeight(BUTTON_SIZE);
-		divide.setOnAction((e) -> action(Calculator.Operation.DIVIDE));
+		divide.setOnAction(e -> action(Calculator.Operation.DIVIDE));
 		grid.add(divide, 3, 2);
 		
 		Button times = new Button("*");
 		times.setPrefWidth(BUTTON_SIZE);
 		times.setPrefHeight(BUTTON_SIZE);
-		times.setOnAction((e) -> action(Calculator.Operation.TIMES));
+		times.setOnAction(e -> action(Calculator.Operation.TIMES));
 		grid.add(times, 3, 3);
 		
 		Button minus = new Button("-");
 		minus.setPrefWidth(BUTTON_SIZE);
 		minus.setPrefHeight(BUTTON_SIZE);
-		minus.setOnAction((e) -> action(Calculator.Operation.MINUS));
+		minus.setOnAction(e -> action(Calculator.Operation.MINUS));
 		grid.add(minus, 3, 4);
 		
 		Button plus = new Button("+");
 		plus.setPrefWidth(BUTTON_SIZE);
 		plus.setPrefHeight(BUTTON_SIZE);
-		plus.setOnAction((e) -> action(Calculator.Operation.PLUS));
+		plus.setOnAction(e -> action(Calculator.Operation.PLUS));
 		grid.add(plus, 3, 5);
 		
 		Button equal = new Button("=");
 		equal.setPrefWidth(BUTTON_SIZE);
 		equal.setPrefHeight(BUTTON_SIZE);
-		equal.setOnAction((e) -> action(Calculator.Operation.RESULT));
+		equal.setOnAction(e -> action(Calculator.Operation.RESULT));
 		grid.add(equal, 3, 6);
 		
 		stage.setTitle("Calculator");
